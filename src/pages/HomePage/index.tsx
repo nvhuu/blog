@@ -80,12 +80,11 @@ export default function HomePage() {
       {queryResponse.isFetching ? (
         <div className='progress mb-2' style={{ height: '5px' }}>
           <div
-            className='progress-bar progress-bar-striped progress-bar-animated'
+            className='progress-bar progress-bar-striped progress-bar-animated w-100'
             role='progressbar'
-            aria-valuenow='100'
-            aria-valuemin='0'
-            aria-valuemax='100'
-            style={{ width: '100%' }}
+            aria-valuenow={100}
+            aria-valuemin={0}
+            aria-valuemax={100}
           />
         </div>
       ) : !queryResponse.isError && queryResponse.data?.length ? (
