@@ -45,7 +45,7 @@ export const blogApi = createApi({
     updateBlog: builder.mutation<any, IBlog>({
       query: (body: IBlog) => {
         return {
-          url: ApiUtil.getApiUrl(ApiUrl.BLOG_ID),
+          url: ApiUtil.getApiUrl(ApiUrl.BLOG_ID, { id: body.id! }),
           method: 'PUT',
           body
         }

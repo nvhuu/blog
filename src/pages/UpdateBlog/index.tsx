@@ -73,10 +73,9 @@ const UpdateBlog: React.FC = () => {
         showToast({
           id: Date.now().toString(),
           status: STATUS.SUCCESS,
-          message: 'Blog created'
+          message: 'Blog updated'
         })
       )
-      const id = updateResponse.data.id!
       navigate(`/blog/${id}`)
     }
     if (deleteResponse.isSuccess) {
@@ -126,8 +125,10 @@ const UpdateBlog: React.FC = () => {
         description,
         image
       }
-      if (id) updateBlog(newBlog)
-      else createBlog(newBlog)
+      if (id) {
+        newBlog.id = id
+        updateBlog(newBlog)
+      } else createBlog(newBlog)
       setTitle('')
       setDescription('')
       setContent('')

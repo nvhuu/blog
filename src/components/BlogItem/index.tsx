@@ -8,7 +8,7 @@ export default function BlogItem(props: Props) {
   const { blog } = props
   const navigate = useNavigate()
   return (
-    <div className='media mb-4' style={{ cursor: 'pointer' }} onClick={() => navigate(`/${blog.id!}`)}>
+    <div className='media mb-4' style={{ cursor: 'pointer' }} onClick={() => navigate(`/blog/${blog.id!}`)}>
       <img
         src={blog.image}
         className='mr-3 '

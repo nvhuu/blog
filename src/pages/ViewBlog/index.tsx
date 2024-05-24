@@ -28,15 +28,17 @@ export default function ViewBlog() {
           </div>
         </div>
       )}
-      <div className='row'>
-        <Link to={`/blog/${id}/edit`}>
-          <button
-            className='btn btn-primary fixed-button'
-            style={{ position: 'absolute', top: '0', right: '20px', zIndex: '999' }}
-          >
-            Update blog
+      <div style={{ position: 'absolute', top: '0', right: '20px', zIndex: '999' }}>
+        <Link to={`/`}>
+          <button className='btn btn-primary fixed-button mr-3'>
+            <i className='bi bi-house-fill'></i>
           </button>
         </Link>
+        <Link to={`/blog/${id}/edit`}>
+          <button className='btn btn-primary fixed-button'>Update blog</button>
+        </Link>
+      </div>
+      <div className='row'>
         <div className='col'>
           <h2>{data?.title}</h2>
         </div>
@@ -47,8 +49,15 @@ export default function ViewBlog() {
         </div>
       </div>
       <div className='row'>
+        <div className='col'>
+          <p>
+            <strong>{data?.description}</strong>
+          </p>
+        </div>
+      </div>
+      <div className='row'>
         <div className='col-md-6'>
-          <p>{data?.content}</p>
+          <div>{data?.content}</div>
         </div>
         <div className='col-md-6'>
           <img className='img-fluid' src={data?.image} alt='Blog' loading='lazy' />
