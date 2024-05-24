@@ -11,7 +11,7 @@ import { IBlog, IQueryBlogs } from '~/types'
 
 export default function HomePage() {
   const limit = 5
-  const [query, setQuery] = useState<IQueryBlogs>({ page: 1, limit, sortBy: 'id', order: 'asc', search: '' })
+  const [query, setQuery] = useState<IQueryBlogs>({ page: 1, limit, sortBy: 'id', order: 'desc', search: '' })
   const [getBlogs, queryResponse] = useLazyGetBlogsQuery()
   const dispatch = useDispatch()
   const [pageList, setPageList] = useState([1])
