@@ -13,7 +13,7 @@ export default function BlogItem(props: Props) {
         src={blog.image}
         className='mr-3 '
         alt='thumbnail'
-        style={{ width: '64px', height: '64px' }}
+        style={{ width: '80px', height: '80px' }}
         loading='lazy'
       />
       <div className='media-body'>
